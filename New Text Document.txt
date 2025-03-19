@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frfano - متجر عطور</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #333;
+    }
+    header {
+      background-color: #000;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background-color: #111;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1616627984315-e4a0efcba1f6');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2em;
+      text-shadow: 2px 2px 4px #000;
+    }
+    .products {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .product {
+      display: inline-block;
+      width: 250px;
+      margin: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .product img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    .product h3 {
+      margin: 10px 0;
+    }
+    .product button {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .product button:hover {
+      background-color: #333;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 999;
+    }
+    footer {
+      background-color: #f4f4f4;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+  <script>
+    function contactWhatsApp(productName) {
+      var phone = "201234567890"; // ضع رقم واتساب هنا
+      var message = `مرحبا، أرغب في طلب المنتج: ${productName}`;
+      var url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Frfano</h1>
+    <p>اكتشف أفخم العطور المختارة لك</p>
+  </header>
+
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#">من نحن</a>
+    <a href="#products">العطور</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
+
+  <div class="hero">
+    عطور تأسر الحواس
+  </div>
+
+  <section class="products" id="products">
+    <h2>منتجاتنا</h2>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1600185365942-7ccf452d4a2e" alt="عطر ملكي">
+      <h3>عطر ملكي</h3>
+      <p>رائحة فاخرة تدوم طويلاً</p>
+      <button onclick="contactWhatsApp('عطر ملكي')">اطلب الآن</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1612277799859-2b7a4046ef64" alt="عطر زهري">
+      <h3>عطر زهري</h3>
+      <p>لمسة أنثوية ناعمة</p>
+      <button onclick="contactWhatsApp('عطر زهري')">اطلب الآن</button>
+    </div>
+  </section>
+
+  <a class="whatsapp" href="https://wa.me/201234567890" target="_blank">تواصل واتساب</a>
+
+  <footer id="contact">
+    <p>&copy; 2025 Frfano. جميع الحقوق محفوظة.</p>
+  </footer>
+</body>
+</html>
